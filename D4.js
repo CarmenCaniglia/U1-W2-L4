@@ -31,15 +31,16 @@ console.log("risultato con valori uguali ", crazySum(2, 2));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const crazyDiff = function (a, b) {
-  if (b > 19) {
-    return Math.abs(a - b) * 3;
+const crazyDiff = function (n) {
+  const result = n - 19;
+  if (n > 19) {
+    return Math.abs(result) * 3;
   } else {
-    return Math.abs(a - b);
+    return Math.abs(result);
   }
 };
-console.log("differenza assoluta tra i valori 15 e 19 è ", crazyDiff(15, 19));
-console.log("nel secondo caso, invece, il risultato è ", crazyDiff(30.45, 19));
+console.log("differenza assoluta tra i valori 8 e 19 è ", crazyDiff(8));
+console.log("nel secondo caso, invece, il risultato è ", crazyDiff(20));
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -111,7 +112,20 @@ console.log(reverseString("EPICODE"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const upperFirst = function (stringa) {};
+const upperFirst = function (str) {
+  let result = "";
+
+  const arrayOfWords = str.split(" "); //--> [buonasera, a , tutti]
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    result +=
+      arrayOfWords[i].slice(0, 1).toUpperCase() +
+      arrayOfWords[i].slice(1) +
+      " ";
+  }
+  return result;
+};
+console.log(upperFirst("buonasera a tutti"));
+console.log(upperFirst("la volpe salta la siepe"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -134,8 +148,8 @@ console.log("prima Epicode, dopo ", cutString("Epicode"));
 const giveMeRandom = function (n) {
   const randomNum = [];
   for (let i = 0; i < n; i++) {
-    randomNum.push(Math.floor(Math.random() * 10));
+    randomNum.push(Math.floor(Math.random() * 11));
   }
   return randomNum;
 };
-console.log(giveMeRandom(5));
+console.log(giveMeRandom(8));
